@@ -1,4 +1,6 @@
-package resolucion.entregable_u2;
+package entregable_u2;
+
+import java.util.Random;
 
 // Implementa una función con nombre nEsimo que busque el número que hay dentro de un array bidimensional en la posición
 // n-ésima contando de izquierda a derecha y de arriba abajo, como si se estuviera leyendo. El primer elemento es el 0.
@@ -25,10 +27,39 @@ package resolucion.entregable_u2;
 // nEsimo(a, 6) devuelve 32
 // nEsimo(a, 21) devuelve 78
 // nEsimo(a, 23) devuelve 12
-// nEsimo(a, 24) devuelve -1 n
-// Esimo(a, 100) devuelve -1
+// nEsimo(a, 24) devuelve -1
+// nEsimo(a, 100) devuelve -1
 public class ej4 {
-	public static void main(String[] args) {
+	public static int nEsimo(int[][] n, int posicion) {
+		int resultado = -1;
 
+		int cont = 0;
+
+		for (int i = 0; i < n.length; i++) {
+			for (int j = 0; j < n[0].length; j++) {
+				if (posicion == cont) {
+					resultado = n[i][j];
+				}
+				cont++;
+			}
+		}
+
+	return resultado;
+	}
+
+	public static void main(String[] args) {
+		int arrAleatorio [][] = new int[4][6];
+		int posicion = 22;
+		Random rand = new Random();
+
+		for (int i = 0; i < arrAleatorio.length; i++) {
+			for (int j = 0; j < arrAleatorio[0].length; j++) {
+				arrAleatorio[i][j] = rand.nextInt(91) + 10;
+				System.out.print(arrAleatorio[i][j] + " ");
+			}
+			System.out.println();
+		}
+
+		System.out.println(nEsimo(arrAleatorio, posicion));
 	}
 }

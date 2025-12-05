@@ -1,4 +1,4 @@
-package resolucion.entregable_u2;
+package entregable_u2;
 
 
 // Implementa la función aleatorioDeArray con la cabecera que se muestra a continuación:
