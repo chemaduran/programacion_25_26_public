@@ -15,6 +15,13 @@ public class Pedido {
 		cantidad_de_pedidos++;
 	}
 
+	// Una pizza personalizada
+	public Pedido(Pizza pizza) {
+		this.pizza = pizza;
+		fecha = Calendar.getInstance();
+		cantidad_de_pedidos++;
+	}
+
 	public Pizza getPizza() {
 		return pizza;
 	}
